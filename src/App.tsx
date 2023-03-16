@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Card } from "./components/card";
+import { Input } from "./components/input";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Card
+        name="Raul Souza"
+        position="Senior Front End"
+        src="https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29ya2luZyUyMHJlbW90ZXxlbnwwfHwwfHw%3D&w=1000&q=80"
+      />
+      <br />
+      <Card name="Dionisio Matos" position="Senior Android Developer" />
+      <br />
+      <Card hideIcon name="Jenifer Caroline" position="UX/UI Design" />
+      <br />
+      <Card
+        alignCol
+        src="https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29ya2luZyUyMHJlbW90ZXxlbnwwfHwwfHw%3D&w=1000&q=80"
+        name="Jenifer Caroline"
+        position="UX/UI Design"
+      />
+      <br />
+      <Input placeholder="Novo valor" label='valor com label' />
+      <br />
+      <Input placeholder="Novo valor" />
+      <br />
+      <Input disabled placeholder="Novo valor" />
+      <br />
+      <Input error placeholder="Novo valor" errorMessage="message error" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
